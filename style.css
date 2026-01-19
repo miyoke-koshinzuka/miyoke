@@ -1,0 +1,578 @@
+/* 画像が画面からはみ出さないようにする */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+b/* 全体の基本設定 */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont,
+    "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  color: #2b2623;
+  background: #f4efe5; /* 和風ベージュ */
+}
+
+/* 見出しは少しクラシックに */
+h1,
+h2,
+h3 {
+  font-family: "Noto Serif JP", "Noto Sans JP", serif;
+  letter-spacing: 0.12em;
+}
+
+
+/* コンテンツを真ん中に寄せる */
+main {
+  max-width: 900px;
+  margin: 0 auto 80px; /* 上は0、下に余白 */
+  padding: 0 24px;
+}
+
+/* =========
+   グローバルナビ
+   ========= */
+html {
+  scroll-behavior: smooth;
+}
+
+
+.global-nav {
+  position: sticky;        /* スクロールしても上に張り付く */
+  top: 0;
+  z-index: 100;
+  background: #2f2f2f;     /* ヘッダーと同じような濃いグレーに */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.global-nav ul {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 8px 24px;
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.global-nav li {
+  font-size: 14px;
+}
+
+.global-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.global-nav a:hover {
+  opacity: 0.8;
+}
+.nav a[target="_blank"]::after {
+  content: "↗";
+  font-size: 0.75em;
+  margin-left: 4px;
+  opacity: 0.7;
+}
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #c9753d;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.instagram-link::before {
+  content: "📷";
+}
+
+.instagram-link:hover {
+  text-decoration: underline;
+}
+
+
+/* スマホ：ナビを少しコンパクトに */
+@media (max-width: 768px) {
+  .global-nav ul {
+    padding: 8px 16px;
+    gap: 16px;
+    flex-wrap: wrap;    /* 画面幅が狭いときは折り返し */
+  }
+
+  .global-nav li {
+    font-size: 13px;
+  }
+}
+
+
+/* 一番上の黒い帯（店の看板） */
+/* ===== ヒーローヘッダー ===== */
+.hero {
+  background: linear-gradient(135deg, #262120, #3a302c);
+  color: #ffffff;
+  padding: 56px 24px 48px;
+}
+
+.hero-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 26px;
+  margin: 0 0 8px;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.85;
+  letter-spacing: 0.18em;
+}
+
+
+/* ===== セクション共通 ===== */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+.section {
+  margin-top: 40px;
+}
+
+/* セクションタイトル（既存の “左の線” デザインを少し洗練させる） */
+.section h2 {
+  font-size: 18px;
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section h2::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 1.2em;
+  border-radius: 999px;
+  background: #d7903b; /* 柔らかい琥珀色 */
+}
+
+
+
+.daily-menu {
+  text-align: center;
+}
+
+.daily-menu img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+/* ===== スプラッシュ画面 ===== */
+
+#splash {
+  position: fixed;
+  inset: 0; /* top, right, bottom, left を全部0にするショートカット */
+  background: #111;              /* 真っ黒背景 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.7s ease; /* フェードアウト用 */
+}
+
+#splash.splash-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.splash-inner {
+  text-align: center;
+  color: #fff;
+}
+
+.splash-logo {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.splash-title {
+  font-size: 20px;
+  letter-spacing: 0.2em;
+}
+
+/* =========================
+   スマホ用レイアウト調整
+   ========================= */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  /* ヒーロー（上の黒い帯） */
+  .hero {
+    padding: 40px 16px;
+  }
+
+  .hero-inner h1 {
+    font-size: 24px;
+    letter-spacing: 0.15em;
+  }
+
+  .hero-inner p {
+    font-size: 12px;
+  }
+
+
+
+  /* セクション全体の余白を少しコンパクトに */
+  .section {
+    padding: 40px 16px;
+  }
+
+  .section h2 {
+    font-size: 18px;
+  }
+
+  /* 日替わりメニュー画像 */
+  .daily-menu {
+    margin-top: 24px;
+  }
+
+  .daily-menu img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+ /* スプラッシュ（最初のロゴ画面） */
+/* ===== スプラッシュ画面 ===== */
+/* スプラッシュ全体（背景の黒いやつ） */
+#splash {
+  position: fixed;
+  inset: 0;                 /* top:0; right:0; bottom:0; left:0; と同じ */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* ← ここがポイント：真っ黒 → 少し透けた黒 にする */
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);  /* ぼかしを少しだけ（お好みで） */
+}
+
+
+#splash.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* スプラッシュ内コンテンツ */
+.splash-inner {
+  text-align: center;
+  color: #fff;
+  animation: splashFadeIn 0.8s ease-out;
+}
+
+.splash-logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.splash-title {
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  margin-bottom: 20px;
+}
+
+/* ローディング風くるくる */
+.loader {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fbb03b;        /* ビール色っぽい黄色 🍺 */
+  animation: loadingSpin 0.8s linear infinite;
+}
+
+/* ふわっと出てくるアニメ */
+@keyframes splashFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* くるくる回るアニメ */
+@keyframes loadingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ぷにっと出てくる感じ */
+@keyframes splash-pop {
+  0% {
+    transform: translateY(10px) scale(0.9);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(0) scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
+}
+/* =========================
+   お店情報・アクセス用
+   ========================= */
+
+/* タイトルの下にちょっと余白 */
+.section h2 {
+  margin-bottom: 16px;
+}
+
+/* 白いカード */
+.section-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px 28px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* お店情報の2カラム */
+.info-grid {
+  display: flex;
+  gap: 16px;
+}
+
+.info-block {
+  flex: 1;
+}
+
+.info-block h3 {
+  font-size: 13px;
+  margin: 0 0 4px;
+  color: #7b6a5d;
+  letter-spacing: 0.12em;
+}
+
+.info-block p {
+  font-size: 14px;
+  margin: 0 0 8px;
+  line-height: 1.8;
+}
+
+
+/* 日替わりメニューのカード */
+.daily-menu {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 20px 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.daily-menu img {
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+#dailyMenuCaption {
+  font-size: 14px;
+  color: #555;
+}
+/* 地図を囲うカード */
+.map-wrapper {
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 12px;
+}
+.access-text {
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+
+/* マップの枠 */
+.map-wrapper {
+  margin-top: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#newsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#newsList li {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+}
+
+/* お知らせ画像 */
+.news-image {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.news-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.news-image p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* ===== 日替わりギャラリー ===== */
+.section-lead {
+  margin-top: 4px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  color: #8a7a68;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.gallery-item {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.gallery-meta {
+  font-size: 0.85rem;
+  color: #6b5b4a;
+  text-align: center;
+  line-height: 1.4;
+}
+/* 最初は隠しておくギャラリーアイテム */
+.gallery-item.is-hidden {
+  display: none;
+}
+
+/* もっと見る ボタンまわり */
+.gallery-more-wrap {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: #c9753d;       /* ちょっと濃いめの茶オレンジ */
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
+}
+
+.primary-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+
+@media (max-width: 768px) {
+  main {
+    padding: 24px 16px 64px;
+  }
+
+  .section {
+    margin-top: 32px;
+  }
+
+  .section-card {
+    padding: 20px 18px;
+    border-radius: 14px;
+  }
+
+  .info-grid {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+
+
