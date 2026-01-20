@@ -1,3 +1,9 @@
+// 画像の読み込み方式を選ぶ（保険つき）
+const IMAGE_MODE = "drive"; 
+// "local" ← いままで（imgフォルダ）
+// "drive" ← GoogleドライブURL
+
+
 // ▼ ゆかのスプレッドシート（CSV）のURL
 const DAILY_MENU_SHEET_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQQW-ZfLjTvUgnTESFQ38CHIeRMEShMfGWQz1TbYdnCApKwQ7SzW7qsEmxLf-3vJRnAfjWjZuRnyTlQ/pub?gid=0&single=true&output=csv";
