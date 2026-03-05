@@ -239,25 +239,3 @@ loadDailyMenuImage();
 loadNewsImage();
 loadDailyGallery();
 
-
-// ページ読み込み完了後にスプラッシュを消す
-window.addEventListener("load", () => {
-  const splash = document.getElementById("splash");
-  if (!splash) return;
-
-  // 少しだけ見せてからフェードアウト
-  setTimeout(() => {
-    splash.classList.add("splash-hidden");
-  }, 800); // 0.8秒後に消し始める
-});
-
-// ===== スプラッシュ画面を自動で消す =====
-window.addEventListener("load", () => {
-  const splash = document.getElementById("splash");
-  if (!splash) return;
-
-  // ちょっとだけロゴを見せてから消す
-  setTimeout(() => {
-    splash.classList.add("hide");
-  }, 1200);
-});
