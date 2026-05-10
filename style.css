@@ -608,4 +608,46 @@ main {
   }
 }
 
+.food-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.food-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.food-caption {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 10px;
+}
+
+.food-item:hover .food-caption,
+.food-item:active .food-caption {
+  opacity: 1;
+}
+
+.food-caption strong {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.food-caption span {
+  font-size: 12px;
+}
+
 
