@@ -608,3 +608,29 @@ main {
   }
 }
 
+.regular-menu {
+  padding: 32px 20px 40px;
+  text-align: center;
+}
+
+.regular-menu h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.regular-menu p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.regular-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.regular-menu-grid img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
