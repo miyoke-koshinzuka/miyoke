@@ -602,4 +602,10 @@ main {
   border-radius: 8px;
 }
 
+@media (min-width: 768px) {
+  .food-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 
