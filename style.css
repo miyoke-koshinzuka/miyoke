@@ -650,39 +650,3 @@ main {
   font-size: 12px;
 }
 
-.food-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.food-item img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-}
-
-.food-caption {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  opacity: 1 !important;
-  background: rgba(0, 0, 0, 0.45);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.food-caption strong {
-  font-size: 14px;
-}
-
-.food-caption span {
-  font-size: 11px;
-}
