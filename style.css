@@ -574,5 +574,32 @@ main {
   }
 }
 
+.food-gallery {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.food-gallery h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.food-gallery p {
+  margin-bottom: 24px;
+  color: #666;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.food-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
 
